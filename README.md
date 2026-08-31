@@ -190,13 +190,23 @@ you'll use for the rest of this guide.
 
 ### 3b. Install the GitHub CLI
 
-**Mac:**
+**Mac — easiest way, no Homebrew needed:**
+
+1. Go to [github.com/cli/cli/releases/latest](https://github.com/cli/cli/releases/latest)
+2. Scroll to **Assets** and download the file ending in **`macOS_universal.pkg`**
+   (one file, works on every Mac)
+3. Double-click it and click through the installer
+
+**Already have Homebrew?** Then just:
 
 ```
 brew install gh
 ```
 
-No Homebrew? Grab the installer from [cli.github.com](https://cli.github.com).
+> **Don't install Homebrew only for this.** It's a large download, it asks for
+> your admin password, and it pulls in Apple's command line tools — several
+> minutes for something the installer above does in seconds. If you want
+> Homebrew for other reasons, it's at [brew.sh](https://brew.sh).
 
 **Windows** — in **PowerShell**:
 
@@ -555,6 +565,31 @@ If you have Cursor or VS Code open, **quit and reopen the whole app** too. Its
 built-in terminal inherited the old settings when the app launched.
 
 Still not found? Then it really isn't on your PATH — see the next section.
+
+---
+
+## I want to install Homebrew anyway
+
+You don't need it for this course — see [Step 3b](#3b-install-the-github-cli).
+But if you want it, paste this into **Terminal**:
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+It explains what it's going to do and waits for you to press Enter. It will ask
+for your Mac password (typing shows nothing — that's normal), and it may spend
+several minutes installing Apple's command line tools first.
+
+When it finishes it prints two or three "Next steps" commands — **run them**.
+That's what puts `brew` on your PATH. If you skipped them, see
+[`brew` itself isn't found](#fixing-your-path) below.
+
+Then close your terminal, open a new one, and check:
+
+```
+brew --version
+```
 
 ---
 
