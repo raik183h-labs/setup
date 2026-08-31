@@ -63,25 +63,36 @@ If any course credits or event promotions become available, your instructor will
 2. Sign in with the email and password you created
 3. You should see a welcome screen - you're all set!
 
-### 1e. Install the Shell Command — do not skip this
+### 1e. Make Sure Your Editor Works From the Terminal — do not skip this
 
-This is what lets the course tools open your editor and install your extensions.
-It takes ten seconds and saves a lot of pain later.
-
-1. Open your editor and press `Cmd + Shift + P` (Mac) or `Ctrl + Shift + P` (Windows)
-2. Type **shell command**
-3. Run **Install 'cursor' command** (Cursor) or
-   **Shell Command: Install 'code' command in PATH** (VS Code)
-4. **Close your terminal and open a new one**
-
-Check it worked — one of these should print a version:
+This is what lets the course tools open your editor and install your
+extensions. **Test it first.** Open a terminal and run whichever one you
+installed:
 
 ```
 cursor --version
 code --version
 ```
 
----
+**If you get a version number, you're done — skip to 1f.**
+
+If you get "command not found" or "not recognized":
+
+**On Mac** — you have to turn it on. Open your editor, press
+`Cmd + Shift + P`, type `shell command`, and run:
+
+- VS Code: **Shell Command: Install 'code' command in PATH**
+- Cursor: **Install 'cursor' command**
+
+Then close your terminal, open a new one, and test again.
+
+**On Windows** — the installer already did this for you, so you almost
+certainly just need a **brand-new terminal window** (a window opened before you
+installed the editor won't know about it). Test again in the new window.
+
+> Still not found on Windows after reopening? Re-run the editor's installer and
+> make sure **"Add to PATH"** is checked. There is no command-palette option for
+> this on Windows — that one is Mac-only.
 
 ### 1f. Install the Course Extensions
 
@@ -343,7 +354,7 @@ pick your work back up the next day, run the same command again.
 `gh lab` prints the folder path instead — open that folder in your editor by hand
 (**File → Open Folder**). Your work is already downloaded; nothing is lost.
 
-To fix it for next time, do [Step 1e](#1e-install-the-shell-command--do-not-skip-this).
+To fix it for next time, do [Step 1e](#1e-make-sure-your-editor-works-from-the-terminal--do-not-skip-this).
 
 ---
 
@@ -618,7 +629,7 @@ Keep working. Your instructor deletes the leftover empty one.
 `gh lab` prints the folder path instead. Open that folder yourself:
 **File → Open Folder**. Your work is already downloaded — nothing is lost.
 
-To fix it permanently, do [Step 1e](#1e-install-the-shell-command--do-not-skip-this).
+To fix it permanently, do [Step 1e](#1e-make-sure-your-editor-works-from-the-terminal--do-not-skip-this).
 Then close and reopen your terminal. `cursor --version` (or `code --version`)
 should now answer.
 
@@ -713,9 +724,10 @@ required by whoever starts it.
 Checkstyle linter the first time you run it. If it couldn't:
 
 **Most likely cause:** there's no `cursor` (or `code`) command on your PATH, so
-`gh lab` can't talk to your editor. Go back and do
-[Step 1e](#1e-install-the-shell-command--do-not-skip-this), then close and
-reopen your terminal and run `gh lab` again.
+`gh lab` can't talk to your editor. Test with `cursor --version` or
+`code --version`; if that fails, go back and do
+[Step 1e](#1e-make-sure-your-editor-works-from-the-terminal--do-not-skip-this),
+then close and reopen your terminal and run `gh lab` again.
 
 **To install them by hand instead** — Extensions icon in the left sidebar, then
 search for and install:
