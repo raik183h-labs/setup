@@ -655,6 +655,40 @@ Then close the terminal, open a new one, and try `brew --version` again.
 
 ---
 
+## Windows blocked `gh-student` / "application control policy"
+
+Some managed or locked-down Windows machines refuse to run `gh-student`,
+because it's an unsigned program downloaded from the internet. You may see
+"blocked by your system administrator," an application control policy message,
+or Smart App Control stepping in. Retrying won't help.
+
+**You can still sign in.** `gh student login` is only a shortcut for a normal
+`gh auth login` with extra permissions, and `gh` itself is signed and works
+fine. Run this instead:
+
+```
+gh auth login -s admin:org,read:org,repo,workflow
+```
+
+Answer exactly as in [Step 3d](#3d-sign-in-to-github) — **GitHub.com**,
+**HTTPS**, **Yes**, **Login with a web browser**.
+
+**To get a lab**, ask your partner to run the `gh lab` command and give them
+your GitHub username. Then open
+[github.com/notifications](https://github.com/notifications), accept the
+repository invitation, and clone it in your editor:
+`Ctrl + Shift + P` → **Git: Clone** → paste the repository URL.
+
+Everything after that — editing, committing, pushing — is ordinary Git and
+works normally.
+
+**Tell your instructor**, and screenshot the exact message. If it's a
+school-managed laptop, IT has to allow the program; if it's Smart App Control on
+your own machine, there are other options. Homework is individual, so you'll
+need a different arrangement for that — your instructor will sort it out.
+
+---
+
 ## `unknown command "student" for "gh"`
 
 The classroom tool isn't installed. Run:
