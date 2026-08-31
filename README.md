@@ -146,7 +146,10 @@ In **Terminal** (Mac) or **Git Bash** (Windows):
 
 ```
 gh extension install raik183h-labs/gh-lab
+gh extension install raik183h-labs/gh-homework
 ```
+
+One gives you `gh lab`, the other `gh homework`.
 
 ### 3d. Sign In to GitHub
 
@@ -191,11 +194,15 @@ Everything should be green. Anything red tells you what to fix, and
 
 # Part 2 — Every lab
 
-## ✅ Step 5: Get Your Lab
+## ✅ Step 5: Get Your Lab or Homework
 
 Labs are done in **pairs or trios**, and each team shares **one** repository.
+Homework you do on your own.
 
-> ### 🛑 Do not accept the lab on the GitHub website
+**Homework is individual. Labs are done in teams.** Both start with one
+command; the lab command also handles your partner.
+
+> ### 🛑 Do not accept a lab on the GitHub website
 >
 > Use the `gh lab` command below — nothing else. It puts your whole team in
 > **one** repository, which is the only thing that gets graded.
@@ -207,7 +214,17 @@ Labs are done in **pairs or trios**, and each team shares **one** repository.
 > You do **not** have to decide who goes first. Run the command whenever you're
 > ready — it sorts itself out.
 
-### 5a. Run One Command
+### 5a. Homework — One Command
+
+```
+gh homework homework-3
+```
+
+Homework is **individual work**, so it won't ask about a partner. It sets up
+your repository, downloads it, and opens it in Cursor. Skip to
+[Step 6](#-step-6-write-and-run-your-code).
+
+### 5b. Labs — One Command
 
 In **Terminal** (Mac) or **Git Bash** (Windows), go to the folder where you keep
 your RAIK183H work, then run the lab name your instructor posted:
@@ -229,7 +246,7 @@ question. It then sets everything up and opens the lab in Cursor.
 SpecStory, Local History, Java language support, and our Checkstyle linter. That
 takes an extra minute once and never again.
 
-### 5b. It Doesn't Matter Who Runs It First
+### 5c. It Doesn't Matter Who Runs It First
 
 Whoever gets there first creates the team's repo. The other one joins it
 automatically — no waiting, no clicking, no deciding in advance.
@@ -249,7 +266,7 @@ alone for now. Tell your instructor so they can sort out the pairing.
 **Safe to re-run any time.** If you close the terminal, get lost, or want to
 pick your work back up the next day, run the same command again.
 
-### 5c. If It Didn't Open Automatically
+### 5d. If It Didn't Open Automatically
 
 `gh lab` prints the folder path instead — open that folder in Cursor by hand
 (**File → Open Folder**). Your work is already downloaded; nothing is lost.
@@ -379,7 +396,8 @@ TA. Conflicts are normal and quick to fix once you've seen one.
 gh lab --check
 ```
 
-This prints your setup and marks anything broken in red. If you're asking a TA
+(`gh homework --check` does the same thing.) This prints your setup and marks
+anything broken in red. If you're asking a TA
 for help, run this first and show them the output — it answers most of the
 questions they'd otherwise have to ask you.
 
@@ -453,22 +471,25 @@ Then close the terminal, open a new one, and try `brew --version` again.
 
 ---
 
-## `gh lab` isn't a thing / "unknown command"
+## `gh lab` or `gh homework` isn't a thing / "unknown command"
 
 The extension didn't install. Run:
 
 ```
 gh extension install raik183h-labs/gh-lab
+gh extension install raik183h-labs/gh-homework
 ```
+
+One gives you `gh lab`, the other `gh homework`.
 
 If that errors, run `gh auth status` — you have to be signed in first.
 
 ---
 
-## Windows: which terminal do I run `gh lab` in?
+## Windows: which terminal do I run these in?
 
-**Git Bash.** Search your Start menu for it. `gh lab` is a Bash program and
-will not run correctly in PowerShell or Command Prompt.
+**Git Bash.** Search your Start menu for it. `gh lab` and `gh homework` are
+Bash programs and will not run correctly in PowerShell or Command Prompt.
 
 Use PowerShell only for the one `winget install` line in the setup steps.
 
