@@ -159,7 +159,7 @@ Before you can run your Java program, you need to install Java on your computer.
 
 ### 2c. Verify Java is Installed
 
-1. Open **Terminal** (Mac) or **Git Bash** (Windows — you'll install it in Step 3)
+1. Open **Terminal** (Mac) or **PowerShell** (Windows — you don't have Git Bash yet, that comes in Step 3)
 2. Type `java -version` and press Enter
 3. You should see a few lines starting with something like `openjdk 25.0.1` - the exact version number will depend on whichever LTS release is current when you download it. **Any version number means Java is working!**
 
@@ -204,6 +204,9 @@ No Homebrew? Grab the installer from [cli.github.com](https://cli.github.com).
 winget install --id GitHub.cli -e --source winget
 ```
 
+`winget` not recognized? Grab the installer from
+[cli.github.com](https://cli.github.com) instead.
+
 > ⚠️ **Close every terminal window and open a new one after installing.** A
 > window that was already open won't find the new command. This is the single
 > most common reason "it doesn't work."
@@ -228,6 +231,11 @@ gh extension install raik183h-labs/gh-homework
 without it you'll get `unknown command "student" for "gh"`.
 
 ### 3d. Sign In to GitHub
+
+> **You need a GitHub account first.** If you don't have one, make it now at
+> [github.com/signup](https://github.com/signup) — it's free. Use whatever
+> username you like, but **send it to your instructor on Slack**, because your
+> invitation to the course organization goes to that username.
 
 ```
 gh student login
@@ -263,6 +271,33 @@ This also lets your editor push your work without ever asking for a password.
 Check your **email** (including spam) for an invitation to the course GitHub
 organization and accept it. If you never got one, message your instructor your
 **GitHub username** on Slack.
+
+---
+
+### 3f. Make a Folder for Your Course Work
+
+Your labs get downloaded into whatever folder your terminal is sitting in. If
+you don't pick one, they land wherever the terminal happened to open and you
+won't be able to find them later.
+
+Make one now. In **Terminal** (Mac) or **Git Bash** (Windows), copy these two
+lines:
+
+```
+mkdir -p ~/RAIK183H
+cd ~/RAIK183H
+```
+
+`mkdir` makes the folder; `cd` moves you into it. Check where you are with:
+
+```
+pwd
+```
+
+It should end in `/RAIK183H`.
+
+> **Every time you start a lab**, open a terminal and run `cd ~/RAIK183H`
+> first. A fresh terminal always starts in your home folder, not here.
 
 ---
 
@@ -307,7 +342,11 @@ command; the lab command also handles your partner.
 
 ### 5a. Homework — One Command
 
+In **Terminal** (Mac) or **Git Bash** (Windows), go to your course folder and
+run the homework name your instructor posted:
+
 ```
+cd ~/RAIK183H
 gh homework homework-3
 ```
 
@@ -317,8 +356,12 @@ your repository, downloads it, and opens it in your editor. Skip to
 
 ### 5b. Labs — One Command
 
-In **Terminal** (Mac) or **Git Bash** (Windows), go to the folder where you keep
-your RAIK183H work, then run the lab name your instructor posted:
+In **Terminal** (Mac) or **Git Bash** (Windows), go to your course folder and
+run the lab name your instructor posted:
+
+```
+cd ~/RAIK183H
+```
 
 ```
 gh lab lab-loops-1
