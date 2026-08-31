@@ -214,8 +214,22 @@ One gives you `gh lab`, the other `gh homework`.
 gh student login
 ```
 
-Choose **GitHub.com**, then **HTTPS**, then **Login with a web browser**. Copy
-the code it shows, press Enter, and approve it in the browser.
+It asks you four things. Answer them exactly like this:
+
+| It asks | Choose |
+|---|---|
+| Where do you use GitHub? | **GitHub.com** |
+| Preferred protocol for Git operations? | **HTTPS** |
+| Authenticate Git with your GitHub credentials? | **Yes** |
+| How would you like to authenticate? | **Login with a web browser** |
+
+Then copy the code it shows, press Enter, and approve it in the browser.
+
+> ⚠️ **Pick HTTPS, not SSH.** SSH is the other option on that menu and it looks
+> equally reasonable. It isn't — SSH needs a key you haven't created, so
+> downloading a lab fails with `Permission denied (publickey)` and nothing you
+> do in your editor will fix it. Picked SSH already? See
+> [I picked SSH by mistake](#permission-denied-publickey--i-picked-ssh-by-mistake).
 
 > ⚠️ **Use `gh student login`, not `gh auth login`.** They look
 > interchangeable and they are not. Plain `gh auth login` grants fewer
@@ -728,6 +742,24 @@ To install the file in Cursor:
 The Java extension isn't installed or Java itself isn't set up. Check
 `java -version` first (see above), then confirm **Language Support for Java** is
 in your Extensions list. Your file also has to end in `.java`.
+
+---
+
+## `Permission denied (publickey)` / I picked SSH by mistake
+
+At sign-in you chose **SSH** where the guide said HTTPS. SSH needs a key pair
+you've never made, so Git can't authenticate and downloading a lab fails.
+
+Fix it in one command:
+
+```
+gh config set git_protocol https -h github.com
+```
+
+Then delete the lab folder if one was half-created, and run your `gh lab`
+command again. Nothing is lost — this fails before any of your work exists.
+
+To confirm it took, `gh lab --check` shows the protocol.
 
 ---
 
