@@ -208,16 +208,24 @@ winget install --id GitHub.cli -e --source winget
 > window that was already open won't find the new command. This is the single
 > most common reason "it doesn't work."
 
-### 3c. Install the Course Command
+### 3c. Install the Course Commands
 
-In **Terminal** (Mac) or **Git Bash** (Windows):
+In **Terminal** (Mac) or **Git Bash** (Windows), run all three:
 
 ```
+gh extension install foundation50/gh-student
 gh extension install raik183h-labs/gh-lab
 gh extension install raik183h-labs/gh-homework
 ```
 
-One gives you `gh lab`, the other `gh homework`.
+| This one | Gives you |
+|---|---|
+| `gh-student` | `gh student` — the classroom tool the next step uses to sign you in |
+| `gh-lab` | `gh lab` — starts a lab |
+| `gh-homework` | `gh homework` — starts a homework |
+
+**Install `gh-student` first.** The next step runs `gh student login`, and
+without it you'll get `unknown command "student" for "gh"`.
 
 ### 3d. Sign In to GitHub
 
