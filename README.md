@@ -957,6 +957,119 @@ To confirm it took, `gh lab --check` shows the protocol.
 
 ---
 
+## Git or the GitHub CLI won't install
+
+Two different symptoms, both on Windows, usually the same underlying cause.
+
+**"Another installation is already in progress. Try again later."** Something
+else is holding Windows' installer lock — almost always Windows Update or the
+Microsoft Store updating in the background.
+
+1. Wait five minutes and try again.
+2. Settings → Windows Update, let anything pending finish, then **restart**.
+   The restart releases the lock unconditionally, and it's the reliable fix.
+3. Still stuck? Use the standalone installer from
+   [git-scm.com/download/win](https://git-scm.com/download/win) instead of
+   winget — it doesn't use the same lock.
+
+Do **not** kill `msiexec.exe` in Task Manager. It's the popular advice online,
+and it can leave a half-finished install that's worse than what you started
+with.
+
+**The download just stalls and never finishes.** The GitHub CLI is only about
+14 MB, so this is never about it being a big file. Something is interrupting
+the download — usually campus wifi filtering or security software scanning it.
+
+1. Restart the computer first.
+2. Turn on your phone's hotspot and try the download again. If it finishes in
+   seconds, the network was the problem.
+3. Check that you actually have free disk space — installs stall instead of
+   failing when the drive is full.
+
+If none of that works, skip the installers entirely — see the next section.
+
+---
+
+## Windows: installing without an installer
+
+If installers won't run, stall, or get blocked by your school's security
+software, both tools have versions that need **no installer and no admin
+rights**. This also works when
+[application control](#windows-blocked-gh-student--application-control-policy)
+is blocking things.
+
+Download these two:
+
+- **Git** — [github.com/git-for-windows/git/releases/latest](https://github.com/git-for-windows/git/releases/latest)
+  → the file starting with **`PortableGit`** and ending in `.7z.exe`
+- **GitHub CLI** — [github.com/cli/cli/releases/latest](https://github.com/cli/cli/releases/latest)
+  → **`gh_..._windows_amd64.zip`**
+
+Then:
+
+1. Run the PortableGit file. It doesn't install anything — it just unpacks.
+   Point it at `C:\Users\YOURNAME\tools\PortableGit`.
+2. Unzip the `gh` file into `C:\Users\YOURNAME\tools\gh`.
+3. Open **Git Bash** — it's inside the PortableGit folder you just made.
+4. Paste this, with your real Windows username in place of `YOURNAME`:
+
+```
+echo 'export PATH="$PATH:/c/Users/YOURNAME/tools/gh/bin"' >> ~/.bashrc
+```
+
+5. Close Git Bash, open a new one, and check both:
+
+```
+git --version
+gh --version
+```
+
+Two version numbers means you're set — carry on from
+[Step 3c](#3c-install-the-course-commands).
+
+If the files unpack but refuse to *run*, that's application control blocking
+them, not a download problem. Tell your instructor.
+
+---
+
+## Where did my lab folder go?
+
+`gh lab` downloads into **whatever folder your terminal is currently in**. If
+you didn't `cd` to your course folder first, the lab is still on your computer
+— just somewhere you weren't looking.
+
+Find it:
+
+```
+cd ~
+find . -maxdepth 4 -type d -name "raik-183h-labs-*"
+```
+
+Open the folder it prints with **File → Open Folder** in your editor, or move
+it where you want it. Nothing is broken and nothing is lost.
+
+**Next time**, `cd` to your course folder before running `gh lab` — see
+[Step 3f](#3f-make-a-folder-for-your-course-work).
+
+**On Windows, is it inside OneDrive?** Downloads into a syncing OneDrive folder
+sometimes fail partway. Keep your course folder somewhere plainly local, like
+`C:\Users\YOURNAME\RAIK183H`.
+
+---
+
+## Cursor opened to a chat window instead of my code
+
+Nothing is wrong. Cursor can start in a layout built around the AI agent rather
+than the editor, so it looks like your files are missing. They aren't.
+
+Press `Cmd + Shift + P` (Mac) or `Ctrl + Shift + P` (Windows), type
+**`layout`**, choose the layout switcher, and pick **Editor**. Cursor remembers
+your choice from then on.
+
+VS Code doesn't do this.
+
+---
+
 ## Nothing here helped
 
 Run `gh lab --check`, copy **all** of the output, and bring it to your
