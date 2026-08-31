@@ -13,11 +13,25 @@ is a single command.
 
 # Part 1 — One-time setup
 
-## ✅ Step 1: Get Cursor
+## ✅ Step 1: Get Your Editor
 
-Cursor is an AI-assisted code editor that will help you learn programming. Cursor's free tier is all you need for this course.
+**Either Cursor or VS Code works for this course.** Everything in this guide,
+every course command, and every extension works the same in both — pick one and
+stick with it.
 
-### 1a. Create Your Cursor Account
+- **Cursor** is an AI-assisted editor built on VS Code. Its free tier is all you
+  need. This is what your instructor demonstrates in class.
+- **VS Code** is Microsoft's editor. Free, and the more transferable skill.
+
+Wherever this guide says "your editor," it means whichever one you installed.
+
+### 1a. Install It
+
+**If you chose VS Code:** download from
+[code.visualstudio.com](https://code.visualstudio.com), run the installer, and
+skip to **1c**. No account needed.
+
+**If you chose Cursor**, make an account first:
 
 1. Go to [https://cursor.com](https://cursor.com)
 2. Click "Sign Up" or "Get Started"
@@ -26,7 +40,7 @@ Cursor is an AI-assisted code editor that will help you learn programming. Curso
 5. Create a password
 6. Verify your email address
 
-### 1b. About Paid Plans (You Don't Need One)
+### 1b. About Paid Plans *(Cursor only — you don't need one)*
 
 **You do not need to pay for anything in this course.** Cursor's free tier covers everything in this guide and everything we do in class.
 
@@ -34,7 +48,7 @@ You may see older blog posts or videos advertising "a free year of Cursor Pro fo
 
 If any course credits or event promotions become available, your instructor will tell you in class.
 
-### 1c. Download and Install Cursor
+### 1c. Download and Install Cursor *(Cursor only)*
 
 1. After creating your account, you'll be taken to the download page
 2. Click the big "Download" button
@@ -43,20 +57,29 @@ If any course credits or event promotions become available, your instructor will
    - **Windows**: Double-click the downloaded file and follow the installation wizard
    - **Linux**: Extract the file and run the installer
 
-### 1d. Sign In to Cursor
+### 1d. Sign In to Cursor *(Cursor only)*
 
 1. Open Cursor from your Applications/Programs menu
 2. Sign in with the email and password you created
 3. You should see a welcome screen - you're all set!
 
-### 1e. Install the `cursor` Command
+### 1e. Install the Shell Command — do not skip this
 
-This lets the course tools open Cursor for you. It takes ten seconds and saves
-a lot of pain later.
+This is what lets the course tools open your editor and install your extensions.
+It takes ten seconds and saves a lot of pain later.
 
-1. In Cursor, press `Cmd + Shift + P` (Mac) or `Ctrl + Shift + P` (Windows)
-2. Type **Install 'cursor' command**
-3. Press Enter
+1. Open your editor and press `Cmd + Shift + P` (Mac) or `Ctrl + Shift + P` (Windows)
+2. Type **shell command**
+3. Run **Install 'cursor' command** (Cursor) or
+   **Shell Command: Install 'code' command in PATH** (VS Code)
+4. **Close your terminal and open a new one**
+
+Check it worked — one of these should print a version:
+
+```
+cursor --version
+code --version
+```
 
 ---
 
@@ -166,7 +189,7 @@ the code it shows, press Enter, and approve it in the browser.
 > to start a lab. If you already ran `gh auth login`, just run
 > `gh student login` now — it fixes it.
 
-This also lets Cursor push your work without ever asking for a password.
+This also lets your editor push your work without ever asking for a password.
 
 ### 3e. Accept Your GitHub Invitation
 
@@ -221,7 +244,7 @@ gh homework homework-3
 ```
 
 Homework is **individual work**, so it won't ask about a partner. It sets up
-your repository, downloads it, and opens it in Cursor. Skip to
+your repository, downloads it, and opens it in your editor. Skip to
 [Step 6](#-step-6-write-and-run-your-code).
 
 ### 5b. Labs — One Command
@@ -240,9 +263,9 @@ Partner's GitHub username (press Enter if working alone):
 ```
 
 Type your partner's **GitHub username** — not their real name. That's the only
-question. It then sets everything up and opens the lab in Cursor.
+question. It then sets everything up and opens the lab in your editor.
 
-**The first time you run it, it also installs the course Cursor extensions** —
+**The first time you run it, it also installs the course extensions** —
 SpecStory, Local History, Java language support, and our Checkstyle linter. That
 takes an extra minute once and never again.
 
@@ -268,10 +291,10 @@ pick your work back up the next day, run the same command again.
 
 ### 5d. If It Didn't Open Automatically
 
-`gh lab` prints the folder path instead — open that folder in Cursor by hand
+`gh lab` prints the folder path instead — open that folder in your editor by hand
 (**File → Open Folder**). Your work is already downloaded; nothing is lost.
 
-To fix it for next time, do [Step 1e](#1e-install-the-cursor-command).
+To fix it for next time, do [Step 1e](#1e-install-the-shell-command--do-not-skip-this).
 
 ---
 
@@ -284,14 +307,14 @@ and the course AI rules. Read the README first.
 
 1. Look for a small "Run" button (▶️) above your code or in the top-right corner
 2. Click on it, or press `F5`
-3. Cursor will compile and run your Java program automatically
+3. Your editor will compile and run your Java program automatically
 
 **What happens:** The Java extension will compile your code and show the output!
 
 **If the play button doesn't work:**
 
 1. **Check the bottom status bar** - Look for any error messages in red
-2. **Try restarting Cursor** - Close and reopen Cursor completely
+2. **Try restarting your editor** - Close and reopen it completely
 3. **Check Java installation** - Make sure Java is properly installed (Step 2)
 4. **Verify file extension** - Your file must end with `.java`
 5. **Ask for help** - If nothing works, raise your hand and ask your instructor!
@@ -303,12 +326,12 @@ and the course AI rules. Read the README first.
 
 If everything works correctly, you should see:
 
-- A new panel at the bottom of Cursor called "Output" or "Terminal"
+- A new panel at the bottom called "Output" or "Terminal"
 - Your program's output displayed (after a complicated-looking command)
 
 ---
 
-## ✅ Step 7: Use Cursor's AI to Learn
+## ✅ Step 7: Use the AI to Learn
 
 ### 7a. The Course AI Rules
 
@@ -324,7 +347,7 @@ project where you want the same behavior.
 
 1. Look for the AI Chat icon on the left sidebar (looks like a chat bubble or message icon)
 2. Click on it to open the AI chat panel
-3. You should see a chat interface where you can talk to Cursor's AI
+3. You should see a chat interface where you can talk to the AI
 
 ### 7c. Ask the AI for Help
 
@@ -354,7 +377,7 @@ Gate, or not giving full solutions. If it doesn't, tell your instructor.
 
 Write your code as usual. To turn in your work:
 
-1. Click the **Source Control** icon in Cursor's left sidebar (the branching-path icon)
+1. Click the **Source Control** icon in the left sidebar (the branching-path icon)
 2. Type a short message describing what you did — e.g. `finished part 1`
 3. Click **✓ Commit**
 4. Click **Sync Changes** (or **Push**)
@@ -375,12 +398,12 @@ latest changes are there.
 
 Since you share one repository, get in the habit of:
 
-1. **Pull before you start.** In Cursor's Source Control panel, click the `…`
+1. **Pull before you start.** In the Source Control panel, click the `…`
    menu → **Pull**. This grabs your teammate's latest work.
 2. **Push when you stop.** Don't sit on finished work — your teammate can't see
    it until you push.
 
-If Cursor warns about a conflict, don't panic and don't force anything — grab a
+If your editor warns about a conflict, don't panic and don't force anything — grab a
 TA. Conflicts are normal and quick to fix once you've seen one.
 
 > **Easiest way to avoid conflicts entirely:** work together on one screen, or
@@ -538,13 +561,14 @@ Keep working. Your instructor deletes the leftover empty one.
 
 ---
 
-## It didn't open Cursor
+## It didn't open my editor
 
-`gh lab` prints the folder path instead. Open that folder yourself in Cursor:
+`gh lab` prints the folder path instead. Open that folder yourself:
 **File → Open Folder**. Your work is already downloaded — nothing is lost.
 
-To fix it permanently, do [Step 1e](#1e-install-the-cursor-command).
-Then close and reopen your terminal. `cursor --version` should now answer.
+To fix it permanently, do [Step 1e](#1e-install-the-shell-command--do-not-skip-this).
+Then close and reopen your terminal. `cursor --version` (or `code --version`)
+should now answer.
 
 ---
 
@@ -577,7 +601,7 @@ the way down to `bin`.
 
 ---
 
-## Cursor says it can't push / asks for a password
+## My editor says it can't push / asks for a password
 
 You signed into `gh` but not into Git itself. Run:
 
@@ -591,10 +615,10 @@ Then try the push again.
 
 ## "Updates were rejected" when pushing
 
-Your partner pushed something you don't have yet. In Cursor's Source Control
+Your partner pushed something you don't have yet. In the Source Control
 panel, click the `…` menu → **Pull**, then push again.
 
-If Cursor reports a **conflict**, stop and get a TA. Don't force anything and
+If it reports a **conflict**, stop and get a TA. Don't force anything and
 don't delete the folder — conflicts are normal and take about two minutes to
 fix with someone who's seen one.
 
@@ -631,14 +655,14 @@ required by whoever starts it.
 
 ---
 
-## The Cursor extensions didn't install
+## The course extensions didn't install
 
 `gh lab` installs SpecStory, Local History, Red Hat's Java support, and our
 Checkstyle linter the first time you run it. If it couldn't:
 
-**Most likely cause:** there's no `cursor` command on your PATH, so `gh lab`
-can't talk to Cursor. In Cursor press `Cmd + Shift + P` (Mac) or
-`Ctrl + Shift + P` (Windows), run **Install 'cursor' command**, then close and
+**Most likely cause:** there's no `cursor` (or `code`) command on your PATH, so
+`gh lab` can't talk to your editor. Go back and do
+[Step 1e](#1e-install-the-shell-command--do-not-skip-this), then close and
 reopen your terminal and run `gh lab` again.
 
 **To install them by hand instead** — Extensions icon in the left sidebar, then
@@ -648,8 +672,12 @@ search for and install:
 - `Local History`
 - `Language Support for Java(TM) by Red Hat`
 
-**Checkstyle is different.** It isn't in Cursor's extension registry, so it
-ships as a file:
+**Checkstyle is different in Cursor.** Cursor installs extensions from a
+registry called Open VSX, and Checkstyle isn't published there — so it ships as
+a file. **VS Code users can skip this** and just install **Checkstyle for Java**
+from the Extensions panel like any other extension.
+
+To install the file in Cursor:
 
 1. Download [`CheckstyleForJava.vsix`](CheckstyleForJava.vsix) from this repository (click the file, then click "Download")
 2. Extensions panel → **`...`** menu → **Install from VSIX…**
@@ -676,7 +704,7 @@ what we're here for.
 
 # Appendix: Practice on Your Own
 
-Want to try Java outside of a lab? Make a folder anywhere, open it in Cursor
+Want to try Java outside of a lab? Make a folder anywhere, open it in your editor
 (**File → Open Folder**), create a file named `HelloWorld.java`, and type this
 in **by hand** — don't copy and paste, that's the whole point:
 
