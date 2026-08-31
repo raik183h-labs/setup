@@ -83,6 +83,40 @@ code --version
 
 ---
 
+### 1f. Install the Course Extensions
+
+Four extensions. **`gh lab` installs all four for you the first time you start a
+lab**, so you can skip this — but only if you did **1e**, because that's how it
+talks to your editor. Doing it now means one less thing failing in class.
+
+| Extension | Search for | ID |
+|---|---|---|
+| Java language support | **Language Support for Java(TM) by Red Hat** | `redhat.java` |
+| SpecStory | **SpecStory** | `specstory.specstory-vscode` |
+| Local History | **Local History** | `xyz.local-history` |
+| Checkstyle (our style checker) | **Checkstyle for Java** | `shengchen.vscode-checkstyle` |
+
+**To install by hand:** click the Extensions icon in the left sidebar (four
+squares), search the name above, click **Install**.
+
+> **Checkstyle, in Cursor only.** Cursor installs extensions from a registry
+> called Open VSX, and Checkstyle isn't published there — searching won't find
+> it. Download
+> [`CheckstyleForJava.vsix`](CheckstyleForJava.vsix) from this repository, then
+> in the Extensions panel click the **`...`** menu → **Install from VSIX…** and
+> pick the file.
+>
+> **VS Code users:** ignore all that, it's in your marketplace — just search
+> **Checkstyle for Java** and install it normally.
+
+If Cursor offers **Extension Pack for Java** it's fine to take it, but the Red
+Hat one above is the piece that actually matters.
+
+After installing, Cursor or VS Code may pop up asking to install additional Java
+tools — click **Install** and let it finish.
+
+---
+
 ## ✅ Step 2: Install Java (Required!)
 
 Before you can run your Java program, you need to install Java on your computer. Don't worry - it's free and easy!
@@ -205,7 +239,8 @@ organization and accept it. If you never got one, message your instructor your
 gh lab --check
 ```
 
-Everything should be green. Anything red tells you what to fix, and
+Everything should be green — including a line for each of the four course
+extensions. Anything red tells you what to fix, and
 [Part 3](#part-3--when-something-goes-wrong) covers each one.
 
 > If this says `unknown command: lab`, close your terminal, open a new one, and
