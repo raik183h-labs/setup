@@ -565,16 +565,27 @@ Then close the terminal, open a new one, and try `brew --version` again.
 
 ---
 
-## `gh lab` or `gh homework` isn't a thing / "unknown command"
+## `unknown command "student" for "gh"`
 
-The extension didn't install. Run:
+The classroom tool isn't installed. Run:
 
 ```
+gh extension install foundation50/gh-student
+```
+
+Then try `gh student login` again.
+
+---
+
+## `gh lab` or `gh homework` isn't a thing / "unknown command"
+
+The extension didn't install. Run all three:
+
+```
+gh extension install foundation50/gh-student
 gh extension install raik183h-labs/gh-lab
 gh extension install raik183h-labs/gh-homework
 ```
-
-One gives you `gh lab`, the other `gh homework`.
 
 If that errors, run `gh auth status` — you have to be signed in first.
 
