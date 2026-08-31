@@ -406,6 +406,9 @@ project where you want the same behavior.
 project?"` It should mention the CS1 tutor rules — things like the Comprehension
 Gate, or not giving full solutions. If it doesn't, tell your instructor.
 
+**Remember:** Cursor AI, like any other LLM, can make mistakes. Double check its work, and
+chat with a TA in the case of ambiguity or if the AI is being unhelpful
+
 ---
 
 ## ✅ Step 8: Turn It In
