@@ -216,15 +216,35 @@ Three things to expect, so none of them alarm you:
    stars. That's normal. Type it and press Enter.
 3. It may spend several minutes installing Apple's command line tools first.
 
-When it finishes it prints a short **"Next steps"** section with one or two
-commands. **Run those** — that's what makes `brew` work in your terminal.
-(Skipped them? See [`brew` itself isn't found](#fixing-your-path).)
+**When it finishes, two things you must not skip:**
 
-Then close your terminal, open a new one, and:
+**1. Run the "Next steps" commands it prints.** The installer ends with a short
+   **"Next steps"** section containing one or two commands. Copy and run them.
+   That is what makes `brew` work in your terminal — especially on Apple Silicon
+   Macs, where nothing works until you do.
+
+**2. Close your terminal window and open a brand-new one.**
+
+> ⚠️ **A terminal that was already open will still say `brew: command not
+> found`.** It doesn't matter that you just installed it — a terminal only
+> learns about new programs when it starts up. Quit the window entirely and
+> open a fresh one. If you're using the terminal inside Cursor or VS Code,
+> **quit the whole app** and reopen it.
+
+Check it worked in the new window:
+
+```
+brew --version
+```
+
+A version number means you're good. Then:
 
 ```
 brew install gh
 ```
+
+Still `command not found`? See
+[`brew` itself isn't found](#fixing-your-path).
 
 > **Why not just download an installer?** GitHub does publish a `.pkg` for Mac,
 > but it isn't signed, so macOS refuses to open it — you'd get "cannot be
@@ -588,6 +608,25 @@ If you have Cursor or VS Code open, **quit and reopen the whole app** too. Its
 built-in terminal inherited the old settings when the app launched.
 
 Still not found? Then it really isn't on your PATH — see the next section.
+
+---
+
+## `brew: command not found` right after installing Homebrew
+
+Almost always one of two things, in this order:
+
+**1. You're in the same terminal window you installed from.** Quit it entirely
+and open a new one — a terminal only learns about new programs when it starts.
+Using the terminal inside Cursor or VS Code? Quit the whole app and reopen it.
+
+**2. You skipped the "Next steps" the installer printed.** On Apple Silicon
+Macs, Homebrew installs somewhere your shell doesn't look by default, and those
+commands are what fix it. Scroll back up in your terminal and run them, or just
+run this and open a new window:
+
+```
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+```
 
 ---
 
