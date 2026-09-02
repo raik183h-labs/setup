@@ -329,28 +329,36 @@ organization and accept it. If you never got one, message your instructor your
 
 ### 3f. Make a Folder for Your Course Work
 
-Your labs get downloaded into whatever folder your terminal is sitting in. If
-you don't pick one, they land wherever the terminal happened to open and you
-won't be able to find them later.
+Pick one folder to keep all your coursework in, then tell the course tools
+about it. After this, every lab and homework lands there automatically and you
+never have to think about folders again.
 
-Make one now. In **Terminal** (Mac) or **Git Bash** (Windows), copy these two
-lines:
+In **Terminal** (Mac) or **Git Bash** (Windows), copy these three lines:
 
 ```
 mkdir -p ~/RAIK183H
 cd ~/RAIK183H
+gh lab --here
 ```
 
-`mkdir` makes the folder; `cd` moves you into it. Check where you are with:
+- `mkdir` makes the folder
+- `cd` moves you into it
+- `gh lab --here` says **"this is my course folder"** — it remembers, so you
+  only ever run it once
 
-```
-pwd
-```
+You should see a ✓ with the folder's full path.
 
-It should end in `/RAIK183H`.
+> **You do not have to `cd` anywhere before starting a lab.** Once `--here` is
+> set, `gh lab` and `gh homework` put your work in your course folder no matter
+> which folder your terminal is in.
 
-> **Every time you start a lab**, open a terminal and run `cd ~/RAIK183H`
-> first. A fresh terminal always starts in your home folder, not here.
+**Everything in one window.** After the first download, your course folder gets
+a file called `RAIK183H.code-workspace`, and your editor opens *that* instead of
+a single assignment. All your assignments show up together in one window — so
+you're not hunting through five windows to find the right one. Open it any time
+with **File → Open Workspace from File**.
+
+To check it later, run `gh lab --check` and look at the **course folder** line.
 
 ---
 
@@ -1048,8 +1056,20 @@ find . -maxdepth 4 -type d -name "raik-183h-labs-*"
 Open the folder it prints with **File → Open Folder** in your editor, or move
 it where you want it. Nothing is broken and nothing is lost.
 
-**Next time**, `cd` to your course folder before running `gh lab` — see
-[Step 3f](#3f-make-a-folder-for-your-course-work).
+**Fix it for good.** Go to your course folder and set it once — after this,
+assignments always land there no matter where your terminal is:
+
+```
+cd ~/RAIK183H
+gh lab --here
+```
+
+See [Step 3f](#3f-make-a-folder-for-your-course-work). Check it took with
+`gh lab --check`.
+
+**You won't get a duplicate.** If you already downloaded an assignment
+somewhere, `gh lab` finds that copy and uses it rather than making a second
+one — so your work stays in one place.
 
 **On Windows, is it inside OneDrive?** Downloads into a syncing OneDrive folder
 sometimes fail partway. Keep your course folder somewhere plainly local, like
