@@ -426,7 +426,7 @@ cd ~/RAIK183H
 ```
 
 ```
-gh lab lab-loops-1
+gh lab lab-NAME
 ```
 
 It will ask:
@@ -884,7 +884,7 @@ Your work lives on GitHub once you've pushed, so this is safe **if you've
 pushed**:
 
 ```
-gh lab <the-lab-name>
+gh lab lab-NAME
 ```
 
 Run it from a different folder and it will download a fresh copy. If you have
