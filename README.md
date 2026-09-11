@@ -404,11 +404,12 @@ command; the lab command also handles your partner.
 ### 5a. Homework — One Command
 
 In **Terminal** (Mac) or **Git Bash** (Windows), go to your course folder and
-run the homework name your instructor posted:
+run the homework name your instructor posted. Replace `homework-N` below with
+that name — `homework-N` is a placeholder, not a real assignment:
 
 ```
 cd ~/RAIK183H
-gh homework homework-3
+gh homework homework-N
 ```
 
 Homework is **individual work**, so it won't ask about a partner. It sets up
