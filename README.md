@@ -419,7 +419,8 @@ your repository, downloads it, and opens it in your editor. Skip to
 ### 5b. Labs — One Command
 
 In **Terminal** (Mac) or **Git Bash** (Windows), go to your course folder and
-run the lab name your instructor posted:
+run the lab name your instructor posted. Replace `lab-NAME` below with that name
+— `lab-NAME` is a placeholder, not a real lab:
 
 ```
 cd ~/RAIK183H
