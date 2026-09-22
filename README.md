@@ -128,6 +128,45 @@ tools — click **Install** and let it finish.
 
 ---
 
+### 1g. Point Checkstyle at Our Rules — do not skip this
+
+Installing Checkstyle isn't enough. Out of the box it doesn't know *whose*
+style rules to check, so it sits there quietly and never says anything. You
+have to hand it our rules once.
+
+**This is what puts the yellow squiggly lines under your code**, and those
+squiggles are the same style points your homework is graded on. If you aren't
+seeing them, this step is why.
+
+1. Open the Extensions panel (`Ctrl`/`Cmd` + `Shift` + `X`)
+2. Find **Checkstyle for Java**, click the **cog** ⚙️ next to it, then click
+   **Settings**
+3. Find the box labelled **Java › Checkstyle: Configuration**
+4. Paste this link into it:
+
+```
+https://raw.githubusercontent.com/raik183h-master/RAIK-Style-Guide/refs/heads/main/raik-style.xml
+```
+
+There's no save button — the box saves as you type it. Close the Settings tab.
+
+**Check that it worked:** open any `.java` file that has code in it. Within a
+few seconds you should see yellow squiggly lines, and the **Problems** panel
+(`Ctrl`/`Cmd` + `Shift` + `M`) should list style warnings. A brand-new empty
+file won't show anything, so use a file you've actually written in.
+
+> **Nothing appeared?** You need to be on the internet the first time, because
+> that link is downloaded, not stored on your computer. Check that
+> **Java › Checkstyle: Autocheck** is ticked in that same settings screen, then
+> close and reopen your editor.
+
+> **A word about what it flags.** Checkstyle is picky on purpose — it will
+> complain about missing Javadoc comments and about "magic numbers" long before
+> your code is wrong. A squiggle is a suggestion to look, not an error. Your
+> code still runs.
+
+---
+
 ## ✅ Step 2: Install Java (Required!)
 
 Before you can run your Java program, you need to install Java on your computer. Don't worry - it's free and easy!
@@ -938,6 +977,31 @@ To install the file in Cursor:
 1. Download [`CheckstyleForJava.vsix`](CheckstyleForJava.vsix) from this repository (click the file, then click "Download")
 2. Extensions panel → **`...`** menu → **Install from VSIX…**
 3. Pick the file you downloaded
+
+**Installing it is only half the job.** Once Checkstyle is in, you still have to
+point it at our rules or it stays silent — see
+[Step 1g](#1g-point-checkstyle-at-our-rules--do-not-skip-this).
+
+---
+
+## I don't see the yellow squiggly lines
+
+The style checker is installed but hasn't been told which rules to use, so it
+never says anything. This is the single most common cause, and it's a one-time
+fix: do [Step 1g](#1g-point-checkstyle-at-our-rules--do-not-skip-this).
+
+If you've already done that and still see nothing:
+
+- **Are you looking at a file with code in it?** An empty file has nothing to
+  complain about.
+- **Are you online?** The rules are downloaded from a link the first time.
+- **Is autocheck on?** Extensions → **Checkstyle for Java** → cog ⚙️ →
+  **Settings** → tick **Java › Checkstyle: Autocheck**.
+- **Restart your editor.** Checkstyle only reads the settings when it starts.
+
+Still nothing? Open the **Problems** panel (`Ctrl`/`Cmd` + `Shift` + `M`) — the
+warnings may be listed there even when the squiggles aren't drawing. If that's
+empty too, bring it to a TA.
 
 ---
 
