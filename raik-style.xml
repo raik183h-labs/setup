@@ -273,4 +273,28 @@ Checkstyle configuration that checks the Google coding conventions from Google J
 		<property name="maximum" value="0" />
 		<property name="message" value="Javadoc has illegal ''author'' tag." />
 	</module>
+
+  <!-- ===================================================================
+       Test-file relaxations.  These replace the old second ruleset,
+       raik-test-style.xml, which Eclipse routed to by filename via
+       .checkstyle filesets.  The VS Code Checkstyle extension takes one
+       config per folder and cannot route by filename, so the same
+       relaxations are expressed here as suppressions instead.
+       =================================================================== -->
+
+  <!-- Tests document themselves through their names and their assert
+       messages; they are not API surface.  Same set the old
+       raik-test-style.xml left out. -->
+  <module name="SuppressionSingleFilter">
+    <property name="files" value="Test\.java$"/>
+    <property name="checks" value="(AtclauseOrder|AvoidStarImport|InvalidJavadocPosition|JavadocMethod|JavadocTagContinuationIndentation|LocalFinalVariableName|MissingJavadocMethod|MissingJavadocType|NonEmptyAtclauseDescription|SingleLineJavadoc|SummaryJavadoc)"/>
+  </module>
+
+  <!-- A test's expected value IS a literal on purpose.  Deriving it from
+       the same named constant the code under test uses means the test
+       agrees with the bug. -->
+  <module name="SuppressionSingleFilter">
+    <property name="files" value="Test\.java$"/>
+    <property name="checks" value="MagicNumber"/>
+  </module>
 </module>
