@@ -1163,6 +1163,11 @@ instructor or a TA — in person, on Slack, whatever's faster. Include what you
 typed and what it said back. Don't spend more than ten minutes stuck; that's
 what we're here for.
 
+> **TAs:** [TA-NOTES.md](TA-NOTES.md) covers the cases where the symptom is
+> misleading or absent — the three failures that show up as silence, what
+> `couldn't update — ask a TA` actually means, and which red lines repair
+> themselves.
+
 ---
 
 # Appendix: Practice on Your Own
